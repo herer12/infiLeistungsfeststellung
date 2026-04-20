@@ -1,0 +1,16 @@
+{
+  "version" : 1,
+  "articles" : [ {
+    "articleID" : "T1",
+    "price" : 100,
+    "description" : "Testartikel 1"
+  }, {
+    "articleID" : "T2",
+    "price" : 200,
+    "description" : "Testartikel 2"
+  }, {
+    "articleID" : "Test",
+    "price" : 999,
+    "description" : "Testartikel neu"
+  } ]
+}
