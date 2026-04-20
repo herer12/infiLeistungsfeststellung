@@ -22,6 +22,8 @@ public class Main {
         logic.showAllArticles();
         Article[] articles = logic.getAllArticles();
 
+        System.out.println("Json:");
+
         IDataLayer jsonLayer = DBInstance.getInstance("JSON");
         ((IDbInitialize) jsonLayer).createDatabase("articles.json");
         jsonLayer.saveAllArticles(articles);

@@ -71,6 +71,16 @@ public class DataLayer implements IDataLayer, IDbInitialize {
     public Article getArticleByID(String articleID) {
         // * gibt den Artikel mit der 'articleID' zurück
         // TODO:
+        String sql = "SELECT * FROM articles WHERE id = ?";
+        try (Connection connection = connect()){
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, articleID);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) return desarilizeArticle(rs);
+
+        }catch (Exception e){
+            System.out.println("Error connecting to database" + e.getMessage());
+        }
         return null;
     }
 

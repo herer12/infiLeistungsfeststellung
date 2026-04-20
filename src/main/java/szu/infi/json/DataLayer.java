@@ -33,13 +33,18 @@ public class DataLayer implements IDataLayer, IDbInitialize {
     public Article[] getAllArticles() {
         // * gibt alle Artikel zurück
         // TODO:
-        return null;
+        JsonRoot db = readDatabase();
+        return db.articles.toArray(new Article[0]);
     }
 
     @Override
     public Article getArticleByID(String articleID) {
         // * gibt den Artikel mit der 'articleID' zurück
         // TODO:
+        JsonRoot db = readDatabase();
+        for (Article a : db.articles) {
+            if (a.getArticleID().equals(articleID)) return a;
+        }
         return null;
     }
 
