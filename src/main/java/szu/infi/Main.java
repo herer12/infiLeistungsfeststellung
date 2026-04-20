@@ -23,6 +23,7 @@ public class Main {
         Article[] articles = logic.getAllArticles();
 
         IDataLayer jsonLayer = DBInstance.getInstance("JSON");
+        ((IDbInitialize) jsonLayer).createDatabase("articles.json");
         jsonLayer.saveAllArticles(articles);
 
         Article test = new Article("Test", "Testartikel neu", 999);
