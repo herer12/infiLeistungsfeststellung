@@ -30,5 +30,10 @@ public class Main {
 
         Article test = new Article("Test", "Testartikel neu", 999);
         jsonLayer.saveArticle(test);
+
+        IDataLayer xmlLayer = DBInstance.getInstance("XML");
+        ((IDbInitialize) xmlLayer).createDatabase("articles.xml");
+        xmlLayer.saveAllArticles(articles);
+        xmlLayer.saveArticle(test);
     }
 }

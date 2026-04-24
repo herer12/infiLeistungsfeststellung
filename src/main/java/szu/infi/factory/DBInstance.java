@@ -13,6 +13,8 @@ public class DBInstance {
                 return new szu.infi.sqlite.DataLayer();
             case "JSON":
                 return new szu.infi.json.DataLayer();
+                case "XML":
+                    return new szu.infi.xml.DataLayer();
             default:
                 return null;
         }
